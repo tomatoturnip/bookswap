@@ -41,7 +41,7 @@ group :development do
 end
 
 group :test do
-  gem 'should'
+  gem 'shoulda'
   gem 'capybara'
   gem 'launchy'
 end

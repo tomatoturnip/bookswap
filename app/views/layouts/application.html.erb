@@ -12,7 +12,12 @@
   </head>
 
   <body>
-
+    <%= render 'layouts/messages' %>
+    <% if user_signed_in? %>
+      <%= "Welcome #{current_user.first_name}" %>
+    <% else %>
+      <%= link_to 'Sign up', new_user_registration_path %>
+    <% end %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
