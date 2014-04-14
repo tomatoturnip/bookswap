@@ -1,0 +1,7 @@
+<h1>Borrow List</h1>
+
+<%= simple_form_for @book do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.button :submit, 'add book' %>
+<% end %>
