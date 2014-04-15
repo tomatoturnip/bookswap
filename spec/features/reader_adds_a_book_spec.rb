@@ -25,9 +25,7 @@ feature 'reader adds a book to borrow-list', %Q{
       fill_in 'Author', with: 'Joseph Heller'
       click_button 'add book'
 
-      expect(page).to have_content('Catch-22')
       expect(page).to have_content('Successfully added book')
-
       expect(Book.count).to eq(1)
     end
 

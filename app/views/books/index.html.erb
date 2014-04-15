@@ -1,0 +1,19 @@
+<h1>My Bookshelf</h1>
+
+<table>
+  <thead>
+      <th>Title</th>
+      <th>Author</th>
+  </thead>
+
+  <tbody>
+    <% if @books.present? %>
+      <% @books.each do |book| %>
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.author %></td>
+    </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
