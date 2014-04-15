@@ -23,7 +23,7 @@ feature 'reader adds a book to borrow-list', %Q{
       visit new_book_path
       fill_in 'Title', with: 'Catch-22'
       fill_in 'Author', with: 'Joseph Heller'
-      click_button 'add book'
+      click_button 'submit'
 
       expect(page).to have_content('Successfully added book')
       expect(Book.count).to eq(1)

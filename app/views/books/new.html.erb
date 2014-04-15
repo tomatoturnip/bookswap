@@ -1,7 +1,9 @@
-<h1>Post a Book</h1>
+<h3>Post a Book</h3>
 
 <%= simple_form_for @book do |f| %>
+<div class="large-4 columns">
   <%= f.input :title %>
   <%= f.input :author %>
-  <%= f.button :submit, 'add book' %>
+  <%= f.button :submit, 'submit' %>
 <% end %>
+</div>

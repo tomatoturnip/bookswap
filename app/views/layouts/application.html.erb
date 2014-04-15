@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "BookSwapper" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -12,12 +12,13 @@
   </head>
 
   <body>
+    <%= render 'layouts/navbar' %>
     <%= render 'layouts/messages' %>
-    <% if user_signed_in? %>
-      <%= "Welcome #{current_user.first_name}" %>
-    <% else %>
-      <%= link_to 'Sign up', new_user_registration_path %>
-    <% end %>
+    <%# if user_signed_in? %>
+      <%#= "Welcome #{current_user.first_name}" %>
+    <%# else %>
+      <%#= link_to 'Sign up', new_user_registration_path %>
+    <%# end %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>

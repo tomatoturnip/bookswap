@@ -10,7 +10,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to new_book_path, notice: "Successfully added book"
+      redirect_to books_path, notice: "Successfully added book"
     else
       render 'new'
     end
@@ -18,6 +18,12 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+    @book.delete
+    redirect_to books_path
   end
 
   def book_params

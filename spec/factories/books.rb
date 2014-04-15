@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :book do
-    title "MyString"
-    author "MyString"
+    title "Is Everyone Hanging Out Without Me?"
+    author "Mindy Kaling"
   end
 end

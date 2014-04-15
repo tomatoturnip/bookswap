@@ -4,6 +4,7 @@
   <thead>
       <th>Title</th>
       <th>Author</th>
+      <th>Delete Book</th>
   </thead>
 
   <tbody>
@@ -12,8 +13,10 @@
     <tr>
       <td><%= book.title %></td>
       <td><%= book.author %></td>
+      <td><%= link_to "Delete", book, method: :delete %></td>
     </tr>
       <% end %>
     <% end %>
   </tbody>
 </table>
+<%= button_to "add a book", new_book_path, method: :get %>
