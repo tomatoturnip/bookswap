@@ -7,7 +7,11 @@ Bookswap::Application.routes.draw do
     get 'home' => 'home#index'
   end
 
-  resources :books
+  resources :books do
+    resources :lend_books, only: [:create]
+  end
+
+  resources :lend_books
 
 
 

@@ -1,15 +1,14 @@
 require 'spec_helper'
 
-feature 'reader adds a book to borrow-list', %Q{
+feature 'reader adds a book to My Lender List', %Q{
   As a registered bookswapper
-  I want to list the books I want to borrow
-  So that others can see books I am looking to borrow
+  I want to be able to add books to my lend list
+  So that others can see books I am lending
   } do
 
   # Acceptance criteria:
   # * able to access list of books I am lending
-  # * able to access my profile
-  # * can add a book or delete a book from list
+  # * can add a book a book from list
 
   context 'as an authenticated user' do
 
@@ -20,13 +19,14 @@ feature 'reader adds a book to borrow-list', %Q{
     end
 
     scenario 'fills out new book form with required info' do
-      visit new_book_path
+      visit new_lend_book_path
       fill_in 'Title', with: 'Catch-22'
-      fill_in 'Author', with: 'Joseph Heller'
+      fill_in 'Author', with: 'Jack Hellyer'
       click_button 'submit'
 
       expect(page).to have_content('Successfully added book')
       expect(Book.count).to eq(1)
+      save_and_open_page
     end
 
   end

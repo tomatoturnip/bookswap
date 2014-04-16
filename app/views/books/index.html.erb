@@ -1,22 +1,25 @@
-<h1>My Bookshelf</h1>
+<h1>All Books</h1>
 
 <table>
   <thead>
       <th>Title</th>
       <th>Author</th>
-      <th>Delete Book</th>
+      <th>Action</th>
   </thead>
 
   <tbody>
-    <% if @books.present? %>
-      <% @books.each do |book| %>
+    <% @books.each do |book| %>
     <tr>
-      <td><%= book.title %></td>
+      <td><%= link_to book.title, book %></td>
       <td><%= book.author %></td>
-      <td><%= link_to "Delete", book, method: :delete %></td>
+      <td>
+        <%= simple_form_for([book, LendBook.new]) do |f| %>
+          <%= f.button :submit, "Add to Bookshelf" %>
+        <% end %>
+      </td>
     </tr>
-      <% end %>
     <% end %>
+
   </tbody>
 </table>
-<%= button_to "add a book", new_book_path, method: :get %>
+
