@@ -8,11 +8,11 @@
   </thead>
 
   <tbody>
-      <% @books.each do |book| %>
+      <% @lend_books.each do |lend_book| %>
     <tr>
-      <td><%= book.title %></td>
-      <td><%= book.author %></td>
-      <td><%= link_to "Delete", lend_book_path(id: @lend_book.id), method: :delete %></td>
+      <td><%= lend_book.book.title %></td>
+      <td><%= lend_book.book.author %></td>
+      <td><%= link_to "Delete", lend_book_path(lend_book), method: :delete %></td>
     </tr>
       <% end %>
   </tbody>

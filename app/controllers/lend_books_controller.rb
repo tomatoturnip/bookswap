@@ -1,6 +1,7 @@
 class LendBooksController < ApplicationController
   def index
-    @books = current_user.books
+    # @books = current_user.books
+    @lend_books = current_user.lend_books
   end
 
   # /books/1/lend_books
@@ -22,7 +23,7 @@ class LendBooksController < ApplicationController
 
   def destroy
     @lend_book = LendBook.find(params[:id])
-    @lend_book.delete
+    @lend_book.destroy
     redirect_to lend_books_path
   end
 
