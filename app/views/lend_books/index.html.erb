@@ -1,4 +1,4 @@
-<h1>My Lend List</h1>
+<h1>My Lender List</h1>
 
 <table>
   <thead>
@@ -8,15 +8,13 @@
   </thead>
 
   <tbody>
-    <% if @books.present? %>
       <% @books.each do |book| %>
     <tr>
       <td><%= book.title %></td>
       <td><%= book.author %></td>
-      <td><%= link_to "Delete", book, method: :delete %></td>
+      <td><%= link_to "Delete", lend_book_path(id: @lend_book.id), method: :delete %></td>
     </tr>
       <% end %>
-    <% end %>
   </tbody>
 </table>
 <%= button_to "add a book", new_lend_book_path, method: :get %>

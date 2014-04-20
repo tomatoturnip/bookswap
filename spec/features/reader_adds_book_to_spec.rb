@@ -19,7 +19,7 @@ feature 'reader adds a book to My Lender List', %Q{
     end
 
     scenario 'fills out new book form with required info' do
-      visit new_lend_book_path
+      visit new_book_path
       fill_in 'Title', with: 'Catch-22'
       fill_in 'Author', with: 'Jack Hellyer'
       click_button 'submit'

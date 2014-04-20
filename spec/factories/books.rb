@@ -2,12 +2,7 @@
 
 FactoryGirl.define do
   factory :book do
-    title "Is Everyone Hanging Out Without Me?"
+    sequence(:title) { |n| "Is Everyone Hanging Out Without Me?#{n}" }
     author "Mindy Kaling"
-  end
-
-  factory :book2 do
-    title "One More Thing"
-    author "B.J. Novak"
   end
 end

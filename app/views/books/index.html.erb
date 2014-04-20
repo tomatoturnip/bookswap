@@ -14,7 +14,7 @@
       <td><%= book.author %></td>
       <td>
         <%= simple_form_for([book, LendBook.new]) do |f| %>
-          <%= f.button :submit, "Add to Bookshelf" %>
+          <%= f.button :submit, "Add to Lender List" %>
         <% end %>
       </td>
     </tr>
