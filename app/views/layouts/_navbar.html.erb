@@ -1,7 +1,7 @@
 <nav class="top-bar">
   <!-- Title -->
   <ul class="title-area">
-    <li class="name"><h1><%= link_to "BookSwapper", books_path %></h1></li>
+    <li class="name"><h1><%= link_to "BookSwapper", root_path %></h1></li>
 
     <!-- Mobile Menu Toggle -->
     <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
@@ -29,7 +29,7 @@
         </div>
       </li>
       <li>
-        <%= link_to "My BookShelf", books_path, class: 'button' %>
+        <%= link_to "My BookShelf", root_path, class: 'button' %>
       </li>
       <li>
           <%= link_to "My Lender List", lend_books_path, class: 'button' %>

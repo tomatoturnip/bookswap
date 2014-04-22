@@ -7,6 +7,8 @@ Bookswap::Application.routes.draw do
     get 'home' => 'home#index'
   end
 
+  resources :locations
+
   resources :books do
     resources :lend_books, only: [:create]
   end
@@ -19,7 +21,7 @@ Bookswap::Application.routes.draw do
     end
   end
 
-
+  resources :profiles, except: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

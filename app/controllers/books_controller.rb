@@ -33,7 +33,7 @@ class BooksController < ApplicationController
   private
 
   def filter_books(params)
-    Book.search(params[:query])
+    Book.search(params[:search])
   end
 
   def book_params

@@ -1,0 +1,10 @@
+<h3>Enter Home Address</h3>
+
+<%= simple_form_for @location do |f| %>
+<div class="large-4 columns">
+  <%= f.input :address %>
+  <%= f.input :latitude %>
+  <%= f.input :longitude %>
+  <%= f.button :submit, 'submit' %>
+<% end %>
+</div>
