@@ -12,9 +12,9 @@
   <tbody>
     <%= @books.each do |book| %>
     <tr>
-      <td>book.author</td>
-      <td>book.title</td>
-      <td>book.lend_book.owner</td>
+      <td><%= book.author %></td>
+      <td><%= book.title %></td>
+      <td><%= %></td>
     </tr>
      <% end %>
   </tbody>

@@ -17,7 +17,7 @@
       <!-- Search -->
       <li class="has-form">
         <div class="row collapse">
-          <%= form_tag(search_lend_books_path, controller: :books, action: :search, method: :get) do %>
+          <%= form_tag(search_books_path, controller: :books, action: :search, method: :post) do %>
           <%= hidden_field_tag 'search' %>
           <div class="large-8 small-9 columns">
           <%= text_field_tag 'search', params[:query], placeholder: "Find books" %>

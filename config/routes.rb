@@ -13,7 +13,7 @@ Bookswap::Application.routes.draw do
 
   resources :lend_books
 
-  resources :lend_books do
+  resources :books do
     collection do
       post :search
     end
