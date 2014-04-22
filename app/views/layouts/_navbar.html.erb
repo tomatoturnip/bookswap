@@ -15,14 +15,17 @@
     <ul class="left">
 
       <!-- Search -->
-      <li>
+      <li class="has-form">
         <div class="row collapse">
+          <%= form_tag(search_lend_books_path, controller: :books, action: :search, method: :get) do %>
+          <%= hidden_field_tag 'search' %>
           <div class="large-8 small-9 columns">
-            <input type="text" placeholder="Find books">
+          <%= text_field_tag 'search', params[:query], placeholder: "Find books" %>
           </div>
           <div class="large-4 small-3 columns">
-            <a href="#" class="alert button expand">Search</a>
+            <%= submit_tag 'Search', class: "alert button expand" %>
           </div>
+          <% end %>
         </div>
       </li>
       <li>

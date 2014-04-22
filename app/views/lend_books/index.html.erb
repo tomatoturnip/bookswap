@@ -13,6 +13,7 @@
       <td><%= lend_book.book.title %></td>
       <td><%= lend_book.book.author %></td>
       <td><%= link_to "Delete", lend_book_path(lend_book), method: :delete %></td>
+      <td><%= lend_book.user.username %></td>
     </tr>
       <% end %>
   </tbody>

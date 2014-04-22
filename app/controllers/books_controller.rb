@@ -26,6 +26,16 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
+  def search
+    @books = filter_books(params)
+  end
+
+  private
+
+  def filter_books(params)
+    Book.search(params[:query])
+  end
+
   def book_params
     params.require(:book).permit(:title, :author)
   end

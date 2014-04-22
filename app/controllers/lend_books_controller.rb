@@ -1,7 +1,11 @@
 class LendBooksController < ApplicationController
   def index
     # @books = current_user.books
-    @lend_books = current_user.lend_books
+    if user_signed_in?
+      @lend_books = current_user.lend_books
+    else
+      redirect_to user_session_path
+    end
   end
 
   # /books/1/lend_books

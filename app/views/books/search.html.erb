@@ -1,0 +1,21 @@
+<h1>Search Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Owner</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= @books.each do |book| %>
+    <tr>
+      <td>book.author</td>
+      <td>book.title</td>
+      <td>book.lend_book.owner</td>
+    </tr>
+     <% end %>
+  </tbody>
+</table>

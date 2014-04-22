@@ -13,6 +13,12 @@ Bookswap::Application.routes.draw do
 
   resources :lend_books
 
+  resources :lend_books do
+    collection do
+      post :search
+    end
+  end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
