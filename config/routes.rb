@@ -1,27 +1,32 @@
 Bookswap::Application.routes.draw do
+
   devise_for :users
-
   root 'welcome#index'
-
   namespace :admin do
     get 'home' => 'home#index'
   end
-
   resources :locations
-
   resources :books do
     resources :lend_books, only: [:create]
   end
-
   resources :lend_books
-
   resources :books do
     collection do
       post :search
     end
   end
+  resources :messages
 
-  resources :profiles, except: [:index]
+end
+
+
+
+
+
+
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -77,4 +82,4 @@ Bookswap::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+

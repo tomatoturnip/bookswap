@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_one :location
   has_many :lend_books
   has_many :books, through: :lend_books
+  has_many :messages, foreign_key: "recipient_id"
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :username, presence: true, uniqueness: { case_sensitive: false }
