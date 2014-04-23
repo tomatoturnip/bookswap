@@ -1,0 +1,18 @@
+<h6>title: <%= @book.title %></h6>
+<h6>author: <%= @book.author %></h6>
+
+<table>
+  <thead>
+    <th>Book Owners</th>
+  </thead>
+  <tbody>
+    <tr>
+      <% @book.users.each do |user| %>
+      <td><%= user.username %></td>
+      <%=  %>
+    </tr>
+      <% end %>
+  </tbody>
+</table>
+
+
