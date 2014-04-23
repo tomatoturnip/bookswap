@@ -27,7 +27,7 @@ class BooksController < ApplicationController
   end
 
   def search
-    @books = filter_books(params)
+    @lend_books = LendBook.search(params[:search])
   end
 
   private
@@ -37,6 +37,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :author)
+    params.require(:book).permit(:title, :author, :longitude, :latitude)
   end
 end

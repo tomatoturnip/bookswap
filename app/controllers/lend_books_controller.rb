@@ -1,6 +1,5 @@
 class LendBooksController < ApplicationController
   def index
-    # @books = current_user.books
     if user_signed_in?
       @lend_books = current_user.lend_books
     else

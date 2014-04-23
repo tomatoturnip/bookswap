@@ -9,26 +9,31 @@ class LocationsController < ApplicationController
     end
   end
 
+  def show
+    @location = Location.find(params[:id])
+  end
+
   def new
     @location = Location.new
   end
 
   def create
     @location = Location.new(location_params)
+    @location.user = current_user
+    if @location.save
+      redirect_to @location, notice: "Successfully saved location"
+    else
+      render 'new'
+    end
   end
 
   private
 
   def set_location
     @location = Location.find(params[:id])
-    if @location.save
-      redirect_to @location, notice: 'Location was successfully created'
-    else
-      redirect_to new_location_path, notice: 'Please put a valid location'
-    end
   end
 
   def location_params
-    params.require(:location).permit(:address, :latitude, :longitude)
+    params.require(:location).permit(:address, :latitude, :longitude, :user_id)
   end
 end
