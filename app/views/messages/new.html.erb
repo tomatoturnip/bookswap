@@ -1,7 +1,10 @@
-<%= simple_form_for @message do |f| %>
-  <%= f.input :recipient, as: :string, placeholder: "Username" %>
-  <%= f.input :subject %>
-  <%= f.input :body %>
+<div class="large-4 columns">
+  <h3>Request a Book</h3>
+    <%= simple_form_for @message do |f| %>
+      <%= f.input :recipient, as: :string, placeholder: "Username" %>
+      <%= f.input :subject %>
+      <%= f.input :body %>
 
-  <%= f.button :submit, 'Send', class: "button" %>
-<% end %>
+      <%= f.button :submit, 'Send', class: "button" %>
+    <% end %>
+</div>

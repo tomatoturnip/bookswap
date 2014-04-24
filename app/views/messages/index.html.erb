@@ -1,16 +1,16 @@
 <table>
   <thead>
-    <th>Unread</th>
     <th>Sender</th>
     <th>Subject</th>
     <th>Body</th>
+    <th>Reply</th>
   </thead>
   <% @messages.each do |message| %>
     <tr>
-      <td><%= message.unread %></td>
       <td><%= message.sender.username %></td>
       <td><%= message.subject %></td>
       <td><%= message.body %></td>
+      <td><%= link_to "Reply", new_message_path, method: :get %></td>
     </tr>
   <% end %>
 </table>
