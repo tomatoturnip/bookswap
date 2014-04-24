@@ -49,6 +49,7 @@
 
       <!-- Button -->
       <% if user_signed_in? %>
+        <li class="show-for-large-up"><%= link_to unread_count, messages_path %></li>
         <li class="show-for-large-up">
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
       </li>

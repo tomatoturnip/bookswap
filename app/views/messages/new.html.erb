@@ -1,0 +1,7 @@
+<%= simple_form_for @message do |f| %>
+  <%= f.input :recipient, as: :string, placeholder: "Username" %>
+  <%= f.input :subject %>
+  <%= f.input :body %>
+
+  <%= f.button :submit, 'Send', class: "button" %>
+<% end %>
