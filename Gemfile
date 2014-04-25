@@ -39,9 +39,10 @@ gem 'foundation-rails'
 gem 'simple_form'
 gem 'devise'
 
+gem 'rails_12factor', group: :production
+
 group :development do
   gem 'quiet_assets'
-  gem 'rails_12factor'
   gem 'thin'
 end
 
