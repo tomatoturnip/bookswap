@@ -1,7 +1,8 @@
+<div class="contain-to-grid sticky">
 <nav class="top-bar" data-topbar>
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">BookSwapper</a></h1>
+      <h1><%= link_to "BookSwapper", root_path %></h1>
     </li>
     <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
   </ul>
@@ -17,24 +18,27 @@
           <li><%= link_to "Edit Address", new_location_path, class: 'button' %></li>
         </ul>
       </li>
-    </ul>
-
-    <ul class="left">
-      <li><%= link_to "Post a Book", new_book_path, class: 'button' %></li>
+      <li class="has-dropdown">
+        <a href="#">Books</a>
+        <ul class="dropdown">
+          <li><%= link_to "Post a Book", new_book_path, class: 'button' %></li>
+          <li><%= link_to "Books", books_path, class: 'button' %></li>
+        </ul>
+      </li>
     </ul>
 
     <!-- Search -->
     <ul class="left">
       <li class="has-form">
-        <div class="row collapse">
+        <div class="row collapse buffer">
           <%= form_tag(search_books_path, controller: :books, action: :search, method: :post) do %>
           <%= hidden_field_tag 'search' %>
-          <div class="large-8 small-9 columns">
+          <div class="large-12 small-12 columns">
           <%= text_field_tag 'search', params[:query], placeholder: "Find books" %>
-          </div>
-          <div class="large-4 small-3 columns">
-            <%= submit_tag 'Search', class: "alert button expand" %>
-          </div>
+         </div>
+          <!-- <div class="large-4 small-3 columns"> -->
+            <%#= submit_tag 'Search', class: "alert button expand" %>
+          <!-- </div> -->
           <% end %>
         </div>
       </li>
@@ -58,3 +62,4 @@
     </ul>
   </section>
 </nav>
+</div>

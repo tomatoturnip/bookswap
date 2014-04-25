@@ -1,9 +1,10 @@
-<h3>Post a Book</h3>
+<div class="text-center small-centered large-4 columns">
+  <h3>Post a Book</h3>
 
-<%= simple_form_for @book do |f| %>
-<div class="large-4 columns">
-  <%= f.input :title %>
-  <%= f.input :author %>
-  <%= f.button :submit, 'submit' %>
-<% end %>
+  <%= simple_form_for @book do |f| %>
+    <%= f.input :title %>
+    <%= f.input :author %>
+    <%= f.button :submit, 'submit', class: 'button'%>
+  <% end %>
+  </div>
 </div>

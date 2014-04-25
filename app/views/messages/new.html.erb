@@ -1,9 +1,9 @@
-<div class="large-4 columns">
+<div class="text-center small-centered large-4 columns">
   <h3>Request a Book</h3>
     <%= simple_form_for @message do |f| %>
-      <%= f.input :recipient, as: :string, placeholder: "Username" %>
-      <%= f.input :subject %>
-      <%= f.input :body %>
+      <%= f.input :recipient, as: :string, placeholder: "username" %>
+      <%= f.input :subject, placeholder: "book" %>
+      <%= f.input :body, placeholder: "meet-location and time" %>
 
       <%= f.button :submit, 'Send', class: "button" %>
     <% end %>

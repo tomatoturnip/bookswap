@@ -1,35 +1,38 @@
-<h1>Search Results</h1>
+<div class="large-centered large-8 columns">
+  <h3>Search Results</h3>
 
-<% if @lend_books.empty? %>
-  No results found
-<% else %>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Owner</th>
-        <th>Location</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @lend_books.each do |lend_book| %>
+  <% if @lend_books.empty? %>
+    No results found
+  <% else %>
+    <table>
+      <thead>
         <tr>
-          <% if lend_book.user_id != current_user.id %>
-            <td><%= lend_book.book.title %></td>
-            <td><%= lend_book.book.author %></td>
-            <td><%= lend_book.user.username %></td>
-            <% if user_signed_in? %>
-              <td><%= lend_book.user.location.distance_to(current_user.location).round(2) %> miles </td>
-            <% else %>
-              <td />
-            <% end %>
-            <td><%= link_to 'request book', new_message_url, class: 'button' %></td>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Owner</th>
+          <th>Location</th>
+          <th>Action</th>
         </tr>
+      </thead>
+
+      <tbody>
+        <% @lend_books.each do |lend_book| %>
+          <tr>
+            <% if lend_book.user_id != current_user.id %>
+              <td><%= lend_book.book.title %></td>
+              <td><%= lend_book.book.author %></td>
+              <td><%= lend_book.user.username %></td>
+              <% if user_signed_in? %>
+                <td><%= lend_book.user.location.distance_to(current_user.location).round(2) %> miles </td>
+              <% else %>
+                <td />
+              <% end %>
+              <td><%= link_to 'request book', new_message_url %></td>
+          </tr>
+          <% end %>
         <% end %>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
+

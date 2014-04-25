@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <title><%= content_for?(:title) ? yield(:title) : "BookSwapper" %></title>
 
     <%= stylesheet_link_tag    "application" %>
@@ -13,10 +13,18 @@
 
   <body>
     <%#= render 'layouts/navbar' %>
+<!-- <div class="row"> -->
+  <!-- <div class="large-12 columns"> -->
     <%= render 'layouts/newnav' %>
     <%= render 'layouts/messages' %>
-
+<!-- </div> -->
+<!-- <div class="row">
+  <div class="small-12 columns"> -->
+    <br><br>
     <%= yield %>
+  <!-- </div>
+</div> -->
+    <%= render 'layouts/footer' %>
     <%= javascript_include_tag "application" %>
   </body>
 </html>

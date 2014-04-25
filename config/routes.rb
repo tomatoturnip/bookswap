@@ -16,6 +16,7 @@ Bookswap::Application.routes.draw do
     end
   end
   resources :messages
+  resources :pages, only: [:index]
 
 end
 
