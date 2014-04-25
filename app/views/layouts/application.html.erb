@@ -12,18 +12,10 @@
   </head>
 
   <body>
-    <%#= render 'layouts/navbar' %>
-<!-- <div class="row"> -->
-  <!-- <div class="large-12 columns"> -->
-    <%= render 'layouts/newnav' %>
+    <%= render 'layouts/nav' %>
     <%= render 'layouts/messages' %>
-<!-- </div> -->
-<!-- <div class="row">
-  <div class="small-12 columns"> -->
     <br><br>
     <%= yield %>
-  <!-- </div>
-</div> -->
     <%= render 'layouts/footer' %>
     <%= javascript_include_tag "application" %>
   </body>
