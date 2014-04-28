@@ -2,8 +2,8 @@
   <h3>Post a Book</h3>
 
   <%= simple_form_for @book do |f| %>
-    <%= f.input :title %>
-    <%= f.input :author %>
+    <%= f.input :title, placeholder: "Title", label: false %>
+    <%= f.input :author, placeholder: "Author", label: false %>
     <%= f.button :submit, 'submit', class: 'button'%>
   <% end %>
   </div>

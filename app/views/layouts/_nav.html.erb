@@ -1,65 +1,65 @@
 <div class="contain-to-grid sticky">
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li class="name">
-      <h1><%= link_to "BookSwapper", root_path %></h1>
-    </li>
-    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-  </ul>
-
-  <section class="top-bar-section">
-    <!-- Left Nav Section -->
-    <ul class="left">
-      <li class="has-dropdown">
-        <a href="#">My BookShelf</a>
-        <ul class="dropdown">
-          <li><%= link_to "Messages", messages_path, class: 'button' %></li>
-          <li><%= link_to "My Lender List", lend_books_path, class: 'button' %></li>
-          <li><%= link_to "Edit Address", new_location_path, class: 'button' %></li>
-        </ul>
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to "BookSwapper", root_path %></h1>
       </li>
-      <li class="has-dropdown">
-        <a href="#">Books</a>
-        <ul class="dropdown">
-          <li><%= link_to "Post a Book", new_book_path, class: 'button' %></li>
-          <li><%= link_to "Books", books_path, class: 'button' %></li>
-        </ul>
-      </li>
+      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
     </ul>
 
-    <!-- Search -->
-    <ul class="left">
-      <li class="has-form">
-        <div class="row collapse buffer">
-          <%= form_tag(search_books_path, controller: :books, action: :search, method: :post) do %>
-          <%= hidden_field_tag 'search' %>
-          <div class="large-12 small-12 columns">
-          <%= text_field_tag 'search', params[:query], placeholder: "Find books" %>
-         </div>
-          <!-- <div class="large-4 small-3 columns"> -->
-            <%#= submit_tag 'Search', class: "alert button expand" %>
-          <!-- </div> -->
-          <% end %>
-        </div>
-      </li>
-    </ul>
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li class="has-dropdown">
+          <a href="#">My BookShelf</a>
+          <ul class="dropdown">
+            <li><%= link_to "Messages", messages_path, class: 'button', style: 'text-align: left' %></li>
+            <li><%= link_to "My Lender List", lend_books_path, class: 'button', style: 'text-align: left' %></li>
+            <li><%= link_to "Edit Address", new_location_path, class: 'button', style: 'text-align: left' %></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">Books</a>
+          <ul class="dropdown">
+            <li><%= link_to "Post a Book", new_book_path, class: 'button', style: 'text-align: left' %></li>
+            <li><%= link_to "Books", books_path, class: 'button', style: 'text-align: left' %></li>
+          </ul>
+        </li>
+      </ul>
 
-    <!-- Top Bar Right Nav Elements -->
-    <ul class="right">
-      <!-- Divider -->
-      <li class="divider"></li>
+      <!-- Search -->
+      <ul class="left">
+        <li class="has-form">
+          <div class="row collapse buffer">
+            <%= form_tag(search_books_path, controller: :books, action: :search, method: :post) do %>
+            <%= hidden_field_tag 'search' %>
+            <div class="large-12 small-12 columns">
+            <%= text_field_tag 'search', params[:query], placeholder: "Find books" %>
+           </div>
+            <!-- <div class="large-4 small-3 columns"> -->
+              <%#= submit_tag 'Search', class: "alert button expand" %>
+            <!-- </div> -->
+            <% end %>
+          </div>
+        </li>
+      </ul>
 
-      <!-- Button -->
-      <% if user_signed_in? %>
+      <!-- Top Bar Right Nav Elements -->
+      <ul class="right">
+        <!-- Divider -->
+        <li class="divider"></li>
+
+        <!-- Button -->
+        <% if user_signed_in? %>
+          <li class="show-for-large-up">
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </li>
+        <% else %>
         <li class="show-for-large-up">
-        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-      </li>
-      <% else %>
-      <li class="show-for-large-up">
-        <%= link_to "Log in", new_user_session_path %>
-      </li>
-      <% end %>
-    </ul>
-  </section>
-</nav>
+          <%= link_to "Log in", new_user_session_path %>
+        </li>
+        <% end %>
+      </ul>
+    </section>
+  </nav>
 </div>

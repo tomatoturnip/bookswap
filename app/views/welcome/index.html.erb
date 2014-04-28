@@ -1,16 +1,40 @@
 <h1 class="text-center">Welcome to the BookSwapper</h1>
 <h2 class="text-center">where all your book swapping dreams become a reality</h2>
 <br><br><br>
+
+<ul class="example-orbit" data-orbit data-options="timer:true;
+timer_speed:4000;
+pause_on_hover:false; style=height: 382px;">
+  <li>
+    <%= image_tag("openbook.jpg", alt: "slide 1")%>
+    <div class="orbit-caption">
+      1. search for a book
+    </div>
+  </li>
+  <li>
+    <%= image_tag("near.jpg", alt: "slide 2") %>
+    <div class="orbit-caption">
+      2. find out who owns the book and lives near you
+    </div>
+  </li>
+  <li>
+    <%= image_tag("coffee.jpeg", alt: "slide 3") %>
+    <div class="orbit-caption">
+      3. meet up, borrow books, make friends
+    </div>
+  </li>
+</ul>
+
  <!-- First Band (Image) -->
 
-  <div class="text-center">
+  <!-- <div class="text-center">
     <div class="row">
       <div class="large-12 columns">
-        <%= image_tag("books.jpeg", width: "500")%>
+        <%#= image_tag("books.jpeg", width: "500")%>
           <hr>
         </div>
       </div>
-    </div>
+    </div> -->
   <!-- Second Band (Image Left with Text) -->
 
   <div class="row">
