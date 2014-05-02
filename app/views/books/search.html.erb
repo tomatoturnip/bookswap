@@ -1,17 +1,17 @@
-<div class="large-centered large-8 columns">
-  <h3>Search Results</h3>
+<div class="small-centered large-centered large-8 columns">
+  <h3 align="center">Search Results</h3><br><br>
 
   <% if @lend_books.empty? %>
     No results found
   <% else %>
-    <table>
+    <table align="center">
       <thead>
         <tr>
           <th>Title</th>
           <th>Author</th>
           <th>Owner</th>
           <th>Location</th>
-          <th>Action</th>
+          <th>Request Book</th>
         </tr>
       </thead>
 
@@ -23,16 +23,19 @@
               <td><%= lend_book.book.author %></td>
               <td><%= lend_book.user.username %></td>
               <% if user_signed_in? %>
-                <td><%= lend_book.user.location.distance_to(current_user.location).round(2) %> miles </td>
+                <td><%= lend_book.user.location.distance_to(current_user.location).round(2) %> miles</td>
               <% else %>
                 <td />
               <% end %>
-              <td><%= link_to 'request book', new_message_url %></td>
+              <td><%= link_to 'Request', new_message_url, class: 'button tiny round' %></td>
           </tr>
           <% end %>
         <% end %>
       </tbody>
     </table>
+
+    <div align="center">
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{current_user.location.latitude}%2C#{current_user.location.longitude}" %></div>
   <% end %>
 </div>
 

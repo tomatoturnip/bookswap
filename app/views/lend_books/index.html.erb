@@ -1,6 +1,6 @@
   <div class="large-centered large-8 columns">
-  <h3><%= current_user.username %>'s Lender List</h3>
-    <table>
+  <h3 align="center"><%= current_user.username %>'s Lender List</h3><br><br>
+    <table align="center">
 
       <thead>
           <th>Title</th>
@@ -9,16 +9,19 @@
       </thead>
 
       <tbody>
-          <% @lend_books.each do |lend_book| %>
+         <% @lend_books.sort! {|a, b| a.book.title <=> b.book.title }.each do |lend_book| %>
+         <%# @lend_books.each do |lend_book| %>
         <tr>
           <td><%= lend_book.book.title %></td>
           <td><%= lend_book.book.author %></td>
-          <td><%= link_to "Delete", lend_book_path(lend_book), method: :delete %></td>
+          <td><%= link_to "Delete", lend_book_path(lend_book), method: :delete, class: 'button tiny round' %></td>
         </tr>
           <% end %>
       </tbody>
     </table>
+    <div align="center">
     <%= button_to "add a book", new_book_path, method: :get, class: 'button' %>
+    </div>
 </div>
 
 
