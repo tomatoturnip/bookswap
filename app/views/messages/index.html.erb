@@ -1,7 +1,7 @@
 <div class="large-centered large-8 columns">
-  <h3>My Messages</h3>
+  <h3 align="center">My Messages</h3><br><br>
 
-  <table>
+  <table align="center">
     <thead>
       <th>Sender</th>
       <th>Subject</th>
@@ -13,7 +13,7 @@
         <td><%= message.sender.username %></td>
         <td><%= message.subject %></td>
         <td><%= message.body %></td>
-        <td><%= link_to "Reply", new_message_path, method: :get %></td>
+        <td><%= link_to "Reply", new_message_path, method: :get, class: 'button tiny round' %></td>
       </tr>
     <% end %>
   </table>

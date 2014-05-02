@@ -18,7 +18,11 @@
 
 .example-orbit img {
   width: 100%;
-  height: 400px;
+  height: 300px;
+}
+
+table tr:nth-of-type(even) {
+  background-color: transparent !important;
 }
 
 
